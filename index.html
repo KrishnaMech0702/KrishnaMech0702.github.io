@@ -1,74 +1,326 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Krishna Shrivastava | Mechanical Engineer</title>
-    <style>
-        body {
-            font-family: Arial;
-            margin: 0;
-            background-color: #111;
-            color: white;
-            text-align: center;
-        }
-        header {
-            background: #1f1f1f;
-            padding: 40px;
-        }
-        h1 {
-            margin: 0;
-        }
-        section {
-            padding: 40px;
-        }
-        .card {
-            background: #222;
-            margin: 20px auto;
-            padding: 20px;
-            width: 70%;
-            border-radius: 10px;
-        }
-        a {
-            color: #00bfff;
-            text-decoration: none;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Krishna Shrivastava | Mechanical Engineering Portfolio</title>
+  <style>
+    :root{
+      --bg:#0b0f14;
+      --card:#121826;
+      --muted:#9aa4b2;
+      --text:#e6edf3;
+      --accent:#00bfff;
+      --border:#1f2a3a;
+      --chip:#0f2130;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(180deg, #070a0f 0%, #0b0f14 100%);
+      color:var(--text);
+    }
+    a{color:var(--accent); text-decoration:none}
+    a:hover{text-decoration:underline}
+    .container{max-width:1100px; margin:0 auto; padding:24px}
+
+    /* Header */
+    header{
+      padding:26px 0 10px;
+      border-bottom:1px solid var(--border);
+    }
+    .topbar{
+      display:flex;
+      gap:18px;
+      align-items:flex-start;
+      justify-content:space-between;
+      flex-wrap:wrap;
+    }
+    .name{
+      font-size:32px;
+      margin:0;
+      letter-spacing:0.2px;
+    }
+    .subtitle{
+      margin:10px 0 0;
+      color:var(--muted);
+      line-height:1.5;
+    }
+    .btns{
+      display:flex; gap:10px; flex-wrap:wrap;
+      margin-top:6px;
+    }
+    .btn{
+      display:inline-block;
+      padding:10px 14px;
+      border:1px solid var(--border);
+      border-radius:12px;
+      background:#0f1521;
+      color:var(--text);
+      font-weight:600;
+      font-size:14px;
+    }
+    .btn.primary{
+      border-color: transparent;
+      background: var(--accent);
+      color:#061018;
+    }
+
+    /* Sections */
+    section{padding:26px 0}
+    h2{
+      margin:0 0 12px;
+      font-size:20px;
+      letter-spacing:0.2px;
+    }
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap:14px;
+    }
+    .card{
+      background: radial-gradient(1200px 400px at 20% 0%, rgba(0,191,255,0.12), transparent 45%),
+                  var(--card);
+      border:1px solid var(--border);
+      border-radius:16px;
+      padding:16px;
+    }
+    .card h3{margin:0 0 8px; font-size:16px}
+    .card p{margin:0; color:var(--muted); line-height:1.55}
+    .span-6{grid-column: span 6}
+    .span-4{grid-column: span 4}
+    .span-12{grid-column: span 12}
+
+    @media (max-width: 900px){
+      .span-6,.span-4{grid-column: span 12}
+    }
+
+    /* Chips */
+    .chips{display:flex; gap:8px; flex-wrap:wrap; margin-top:12px}
+    .chip{
+      background: var(--chip);
+      border:1px solid var(--border);
+      color: var(--text);
+      padding:6px 10px;
+      border-radius:999px;
+      font-size:12px;
+    }
+
+    /* Project card extras */
+    .meta{margin-top:10px; color:var(--muted); font-size:13px}
+    ul{margin:10px 0 0 18px; color:var(--muted); line-height:1.6}
+    .card-actions{display:flex; gap:10px; flex-wrap:wrap; margin-top:14px}
+    .smallbtn{
+      padding:8px 10px;
+      border:1px solid var(--border);
+      background:#0f1521;
+      border-radius:10px;
+      font-size:13px;
+      font-weight:600;
+      color:var(--text);
+    }
+
+    /* Footer */
+    footer{
+      border-top:1px solid var(--border);
+      padding:18px 0 30px;
+      color:var(--muted);
+      font-size:13px;
+    }
+    .two-col{
+      display:flex; gap:14px; flex-wrap:wrap;
+    }
+    .two-col > div{flex: 1; min-width: 260px;}
+  </style>
 </head>
 <body>
 
-<header>
-    <h1>Krishna Shrivastava</h1>
-    <p>Mechanical Engineering Student | SAE BAJA | CAD & CAE Enthusiast</p>
-</header>
+  <div class="container">
+    <header>
+      <div class="topbar">
+        <div>
+          <h1 class="name">Krishna Shrivastava</h1>
+          <p class="subtitle">
+            Mechanical Engineering Student • SAE BAJA • CAD & CAE Enthusiast<br/>
+            Focus: Vehicle Systems, Structural Analysis (FEA), Thermal Analysis (CFD), Design for Manufacturing
+          </p>
 
-<section>
-    <h2>Projects</h2>
+          <div class="chips">
+            <span class="chip">SolidWorks</span>
+            <span class="chip">ANSYS (Fluent / Structural)</span>
+            <span class="chip">HyperMesh</span>
+            <span class="chip">MATLAB</span>
+            <span class="chip">Manufacturing</span>
+          </div>
+        </div>
 
-    <div class="card">
-        <h3>Battery Pack Thermal Analysis</h3>
-        <p>Performed ANSYS Fluent simulation on 13s24p Li-ion battery pack to analyze temperature distribution during charging and discharging.</p>
-    </div>
+        <div class="btns">
+          <!-- Replace # with your real links -->
+          <a class="btn primary" href="#projects">View Projects</a>
+          <a class="btn" href="#contact">Contact</a>
+          <a class="btn" href="#" target="_blank">LinkedIn</a>
+          <a class="btn" href="#" target="_blank">GitHub</a>
+          <!-- Upload your resume PDF to repo and change link to resume.pdf -->
+          <a class="btn" href="resume.pdf" target="_blank">Download Resume</a>
+        </div>
+      </div>
+    </header>
 
-    <div class="card">
-        <h3>Rollcage FEA Analysis</h3>
-        <p>Conducted static and impact analysis using HyperMesh to validate safety factors for SAE BAJA rollcage.</p>
-    </div>
+    <!-- About -->
+    <section id="about">
+      <h2>About</h2>
+      <div class="card">
+        <p>
+          I work on mechanical design and CAE for automotive and SAE BAJA applications.
+          I like building systems end-to-end — from requirements → CAD → analysis → manufacturing → testing.
+          This portfolio highlights my key projects, tools, and outcomes.
+        </p>
+      </div>
+    </section>
 
-    <div class="card">
-        <h3>Pipe Bending Machine Design</h3>
-        <p>Designed a bench-mounted pipe bending machine for AISI 4130 tubes with 90° bend capacity.</p>
-    </div>
+    <!-- Projects -->
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="grid">
 
-</section>
+        <div class="card span-6">
+          <h3>Battery Pack Thermal Analysis (13s24p Li-ion 21700) — ANSYS Fluent</h3>
+          <p class="meta"><b>Type:</b> CFD / Thermal • <b>Tools:</b> ANSYS Fluent • <b>Domain:</b> EV Powertrain</p>
+          <ul>
+            <li>Modeled heat generation during charging/discharging to study temperature distribution.</li>
+            <li>Evaluated hotspot regions and cooling requirements for safe operation.</li>
+            <li>Output: temperature contours + design suggestions for improved thermal management.</li>
+          </ul>
+          <div class="card-actions">
+            <a class="smallbtn" href="#" target="_blank">Report (PDF)</a>
+            <a class="smallbtn" href="#" target="_blank">Simulation Images</a>
+          </div>
+        </div>
 
-<section>
-    <h2>Skills</h2>
-    <p>SolidWorks | ANSYS | HyperMesh | MATLAB | Manufacturing</p>
-</section>
+        <div class="card span-6">
+          <h3>Rollcage FEA — HyperMesh Workflow (Static + Impact)</h3>
+          <p class="meta"><b>Type:</b> Structural FEA • <b>Tools:</b> HyperMesh • <b>Domain:</b> SAE BAJA Safety</p>
+          <ul>
+            <li>Prepared mesh, applied boundary conditions, and validated key load cases.</li>
+            <li>Checked stress distribution and factor of safety for critical members.</li>
+            <li>Deliverable: analysis summary + recommendations for reinforcement/weight saving.</li>
+          </ul>
+          <div class="card-actions">
+            <a class="smallbtn" href="#" target="_blank">Report (PDF)</a>
+            <a class="smallbtn" href="#" target="_blank">Results</a>
+          </div>
+        </div>
 
-<section>
-    <h2>Contact</h2>
-    <p>Email: your-email@gmail.com</p>
-</section>
+        <div class="card span-6">
+          <h3>Bench-Mounted Pipe Bending Machine (AISI 4130) — Design</h3>
+          <p class="meta"><b>Type:</b> Mechanism Design • <b>Tools:</b> CAD • <b>Specs:</b> 29.2 mm OD, 1.65 mm thickness, 90° bend</p>
+          <ul>
+            <li>Designed a compact bending system for rollcage tube bending with set bend radius.</li>
+            <li>Considered manufacturability, mounting, and operator safety.</li>
+            <li>Deliverable: CAD model + STEP export + BOM outline.</li>
+          </ul>
+          <div class="card-actions">
+            <a class="smallbtn" href="#" target="_blank">CAD/STEP</a>
+            <a class="smallbtn" href="#" target="_blank">Design Notes</a>
+          </div>
+        </div>
 
+        <div class="card span-6">
+          <h3>Suspension DAQ Planning — SAE BAJA</h3>
+          <p class="meta"><b>Type:</b> Data Acquisition • <b>Focus:</b> Suspension sensors + logging</p>
+          <ul>
+            <li>Planned sensor locations and measurable parameters (travel, acceleration, load).</li>
+            <li>Defined sampling approach and test plan for track validation.</li>
+            <li>Goal: make tuning decisions using real data instead of assumptions.</li>
+          </ul>
+          <div class="card-actions">
+            <a class="smallbtn" href="#" target="_blank">Test Plan</a>
+            <a class="smallbtn" href="#" target="_blank">Hardware List</a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="card" style="margin-top:14px;">
+        <p><b>Note:</b> Replace the “Report/CAD/Results” links with your Google Drive links or files you upload to GitHub.</p>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills">
+      <h2>Skills</h2>
+      <div class="grid">
+        <div class="card span-4">
+          <h3>CAD</h3>
+          <p>SolidWorks • Part & Assembly • Drawings • Surface basics</p>
+        </div>
+        <div class="card span-4">
+          <h3>CAE</h3>
+          <p>ANSYS (Fluent/Structural) • HyperMesh • Meshing • Load cases</p>
+        </div>
+        <div class="card span-4">
+          <h3>Manufacturing</h3>
+          <p>Tube bending • Welding awareness • Jig/fixture thinking • DFM</p>
+        </div>
+        <div class="card span-12">
+          <h3>Tools / Practices</h3>
+          <div class="chips">
+            <span class="chip">Problem solving</span>
+            <span class="chip">Design reviews</span>
+            <span class="chip">Documentation</span>
+            <span class="chip">Team collaboration</span>
+            <span class="chip">Version control (GitHub)</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience / Roles -->
+    <section id="experience">
+      <h2>Experience</h2>
+      <div class="card">
+        <div class="two-col">
+          <div>
+            <h3>SAE BAJA Club</h3>
+            <p class="meta">Role: (Add your role — ex: CAE / Design / Powertrain)</p>
+            <ul>
+              <li>Worked on vehicle subsystems and analysis to support design decisions.</li>
+              <li>Contributed to documentation and project execution.</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Highlights</h3>
+            <ul>
+              <li>FEA + CFD projects with report-ready outputs</li>
+              <li>Hands-on design and manufacturing mindset</li>
+              <li>Focus on placements + clear communication</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <h2>Contact</h2>
+      <div class="card">
+        <p>
+          Email: <a href="mailto:your-email@gmail.com">your-email@gmail.com</a><br/>
+          LinkedIn: <a href="#" target="_blank">Add your LinkedIn link</a><br/>
+          GitHub: <a href="#" target="_blank">Add your GitHub link</a>
+        </p>
+        <p class="meta">Tip: Put this site link in your resume header as “Portfolio”.</p>
+      </div>
+    </section>
+
+    <footer>
+      © <span id="year"></span> Krishna Shrivastava • Built using GitHub Pages
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
